@@ -10,17 +10,23 @@ namespace LibraryFileReader
         public String _type { get; set; }
         public String _path { get; set; }
         public bool _useEncryptedSystem { get; set; }
+        public bool _role { get; set; }
+        private int _NblimitRead { get; set; }
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="Type"></param>
-        /// <param name="Path"></param> 
-        public ReaderFile(String Type, String Path,bool useEncryptedSystem = false)
+        /// <param name="Path"></param>
+        /// <param name="useEncryptedSystem"></param>
+        /// <param name="RoleUser"></param>
+        public ReaderFile(String Type, String Path,bool useEncryptedSystem = false, bool RoleUser = true)
         {
             _type = Type;
             _path = Path;
             _useEncryptedSystem = useEncryptedSystem;
+            _role = RoleUser;
+            _NblimitRead = 10;
         }
 
         /// <summary>

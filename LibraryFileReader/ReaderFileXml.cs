@@ -20,7 +20,10 @@ namespace LibraryFileReader
 
             while (reader.Read())
             {
-                 
+
+                //if role is admin can read all the file 
+                if (this._role && list.Count > this._NblimitRead) break;
+
                 switch (reader.NodeType)
                 {
                     case XmlNodeType.Element: // The node is an element.
