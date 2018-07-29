@@ -44,7 +44,16 @@ namespace FileReader
                 bool UserEncrypted = (Console.ReadLine().ToUpper().Equals("Y") ? true : false);
 
                 Console.WriteLine("Do you want to use role based security context (y/n):");
-                bool RoleUser = (Console.ReadLine().ToUpper().Equals("Y") ? true : false);
+                bool UseRole = (Console.ReadLine().ToUpper().Equals("Y") ? true : false);
+
+                // default user Admin
+                bool RoleUser = false;
+                if (UseRole)
+                {
+                    Console.WriteLine("user role:");
+                    String Role = Console.ReadLine().ToUpper();
+                    RoleUser = (Role.Equals("ADMIN") ? false : true);
+                }
 
                 //Read file 
                 var readFile = new ReaderFile(FileType, Path, UserEncrypted, RoleUser);
