@@ -8,17 +8,19 @@ namespace LibraryFileReader
     {
 
         public String _type { get; set; }
-        public String _path { get; set; } 
-               
+        public String _path { get; set; }
+        public bool _useEncryptedSystem { get; set; }
+
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="Type"></param>
         /// <param name="Path"></param> 
-        public ReaderFile(String Type, String Path)
+        public ReaderFile(String Type, String Path,bool useEncryptedSystem = false)
         {
             _type = Type;
-            _path = Path; 
+            _path = Path;
+            _useEncryptedSystem = useEncryptedSystem;
         }
 
         /// <summary>

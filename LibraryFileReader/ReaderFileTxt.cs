@@ -26,8 +26,10 @@ namespace LibraryFileReader
                 {
                     string line;
                     while ((line = streamReader.ReadLine()) != null)
-                    { 
-                        list.Add(line);
+                    {
+                        //if user want to read the encrypted file system
+                        list.Add((_useEncryptedSystem == true ? Reverse(line) : line));
+
                     }
                 }
 
@@ -40,7 +42,26 @@ namespace LibraryFileReader
                 throw;
             }
         }
-        
-         
+
+
+        /// <summary>
+        /// Simple text reversion algorithm 
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public string Reverse(string s)
+        {
+            if (s != null)
+            {
+                char[] charArray = s.ToCharArray();
+                Array.Reverse(charArray);
+                return new string(charArray);
+            }
+            else
+                return s;
+
+        }
+
+
     }
 }

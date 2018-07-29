@@ -38,10 +38,17 @@ namespace FileReader
                 {
                     Console.WriteLine("File Path  invalid !");
                     goto PathFile;
-                } 
+                }
 
-                var readFile = new ReaderFile(FileType, Path);
+
+                Console.WriteLine("Do you want to use the encrypted system (y/n) : ");
+                bool UserEncrypted = (Console.ReadLine().ToUpper().Equals("Y") ? true : false);
+
+
+                //Read file 
+                var readFile = new ReaderFile(FileType, Path, UserEncrypted);
                 readFile.ReadContentFile();
+
 
                 Console.WriteLine("********************Do you want to exit the program (y/n)***********************");
                 Exit = Console.ReadLine().ToUpper();
