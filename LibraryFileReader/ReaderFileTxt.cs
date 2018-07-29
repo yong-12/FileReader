@@ -27,6 +27,9 @@ namespace LibraryFileReader
                     string line;
                     while ((line = streamReader.ReadLine()) != null)
                     {
+                        //if role is admin can read all the file 
+                        if (this._role && list.Count > this._NblimitRead) break;
+
                         //if user want to read the encrypted file system
                         list.Add((_useEncryptedSystem == true ? Reverse(line) : line));
 
