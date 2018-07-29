@@ -21,7 +21,7 @@ namespace FileReader
             {
                 Console.WriteLine("*******************************************");
                 TypeFile:
-                Console.WriteLine("Type of File (TXT) : ");
+                Console.WriteLine("Type of File (TXT,XML) : ");
                 String FileType = Console.ReadLine().ToUpper();
 
                 if (!ValidationTypeFlie(FileType))
@@ -57,7 +57,8 @@ namespace FileReader
         /// <returns></returns>
         public static bool ValidationTypeFlie(String FileType)
         {
-            if (FileType.ToUpper().Equals("TXT"))
+            if (FileType.ToUpper().Equals("TXT")||
+                FileType.ToUpper().Equals("XML"))
             {
                 return true;
             }else

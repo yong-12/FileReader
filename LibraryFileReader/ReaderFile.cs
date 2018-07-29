@@ -32,7 +32,11 @@ namespace LibraryFileReader
             {
                 case "TXT":
                     Content = ReadFileTxt();
-                    break; 
+                    break;
+                case "XML":
+                    Content = ReadFileXml();
+                    break;
+
             }
 
             Console.WriteLine("******************File content*************************");

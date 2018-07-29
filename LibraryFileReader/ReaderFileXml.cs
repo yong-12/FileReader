@@ -20,23 +20,14 @@ namespace LibraryFileReader
 
             while (reader.Read())
             {
-                //if role is admin can read all the file 
-                if (this._role && list.Count > this._NblimitRead) break;
-
+                 
                 switch (reader.NodeType)
                 {
                     case XmlNodeType.Element: // The node is an element.
                         list.Add("<" + reader.Name+ ">"); 
                         break;
                     case XmlNodeType.Text: //Display the text in each element.          
-                        if (_encryptionSyteme == true)
-                        {
-                            list.Add(Reverse(reader.Value));
-                        }
-                        else
-                        {
-                            list.Add(reader.Value);
-                        }
+                        list.Add(reader.Value);
                         break;
                     case XmlNodeType.EndElement: //Display the end of the element.
                         list.Add("</" + reader.Name + ">"); 
