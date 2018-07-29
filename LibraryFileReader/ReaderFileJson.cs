@@ -33,6 +33,9 @@ namespace LibraryFileReader
                     string rItemKey = rItem.Key;
                     string rItemValueJson = (string)rItem.Value;
 
+                    //if user want to read the encrypted file systeme
+                    rItemValueJson = (this._useEncryptedSystem == true ? Reverse(rItemValueJson) : rItemValueJson);
+
                     list.Add("'" + rItemKey + "':'" + rItemValueJson + "'");
                     
                 }
