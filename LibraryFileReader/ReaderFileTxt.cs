@@ -11,7 +11,7 @@ namespace LibraryFileReader
     public partial class ReaderFile 
     {
         /// <summary>
-        /// Text File reader function
+        /// Text File reader function 
         /// </summary>
         /// <returns></returns>
         public IList<string> ReadFileTxt()

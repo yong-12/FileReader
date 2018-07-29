@@ -40,7 +40,7 @@ namespace LibraryFileReader
             Console.WriteLine("File type : {0}", this._type);
             Console.WriteLine("File content : ");
             foreach (var item in Content)
-            {
+            { 
                 Console.WriteLine(item);
             }
             Console.WriteLine("******************End Of file*************************");
