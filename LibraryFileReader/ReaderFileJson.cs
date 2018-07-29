@@ -25,10 +25,7 @@ namespace LibraryFileReader
             JArray jsonResponse = JArray.Parse(File.ReadAllText(this._path));
             
             foreach (var item in jsonResponse)
-            {
-                //if role is admin, he can read all the file 
-                if (this._role && list.Count > this._NblimitRead) break;
-
+            { 
                 list.Add("{");
                 JObject jRaces = (JObject)item;
                 foreach (var rItem in jRaces)
@@ -36,11 +33,8 @@ namespace LibraryFileReader
                     string rItemKey = rItem.Key;
                     string rItemValueJson = (string)rItem.Value;
 
-                    //if user want to read the encrypted file systeme
-                    rItemValueJson = (_encryptionSyteme == true ? Reverse(rItemValueJson) : rItemValueJson);
-
-                    list.Add("'" + rItemKey + "':'" + rItemValueJson + "'"); 
-                      
+                    list.Add("'" + rItemKey + "':'" + rItemValueJson + "'");
+                    
                 }
                 list.Add("}");
             } 

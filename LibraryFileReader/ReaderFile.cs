@@ -44,6 +44,9 @@ namespace LibraryFileReader
                 case "XML":
                     Content = ReadFileXml();
                     break;
+                case "JSON":
+                    Content = ReadFileJson();
+                    break;
 
             }
 

@@ -21,7 +21,7 @@ namespace FileReader
             {
                 Console.WriteLine("*******************************************");
                 TypeFile:
-                Console.WriteLine("Type of File (TXT,XML) : ");
+                Console.WriteLine("Type of File (TXT,XML,JSON) : ");
                 String FileType = Console.ReadLine().ToUpper();
 
                 if (!ValidationTypeFlie(FileType))
@@ -39,8 +39,7 @@ namespace FileReader
                     Console.WriteLine("File Path  invalid !");
                     goto PathFile;
                 }
-
-
+                
                 Console.WriteLine("Do you want to use the encrypted system (y/n) : ");
                 bool UserEncrypted = (Console.ReadLine().ToUpper().Equals("Y") ? true : false);
 
@@ -67,7 +66,8 @@ namespace FileReader
         public static bool ValidationTypeFlie(String FileType)
         {
             if (FileType.ToUpper().Equals("TXT")||
-                FileType.ToUpper().Equals("XML"))
+                FileType.ToUpper().Equals("XML") ||
+                FileType.ToUpper().Equals("JSON"))
             {
                 return true;
             }else
