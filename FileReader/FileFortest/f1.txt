@@ -1,0 +1,14 @@
+These examples show how to read 
+whole text file into string, 
+how to read all lines into 
+string array or how to read 
+text file line by line to decrease memory usage.
+
+The following examples require to add
+ namespace using System.IO;
+
+XML is a self describing language and
+ it gives the rules as well as the data to parse what data it holds. 
+Parsing (reading) an XML file means that we are parsing the information embedded in XML tags in an XML document. 
+You can parse or read an XML Document in many ways. 
+In this chapter you can see one of the easiest ways to read the XML file.
